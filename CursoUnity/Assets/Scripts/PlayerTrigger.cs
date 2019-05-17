@@ -33,13 +33,11 @@ public class PlayerTrigger : MonoBehaviour
 
         if (collision.CompareTag("Coin"))
         {
-            count++;
             SoundManager.instance.playSound(fxCoin);
             Destroy(collision.gameObject);
-            SetEnemiesKilledCount();
         }
 
-        if (collision.CompareTag("Diamond"))
+        if (collision.CompareTag("Crystal"))
         {
             count++;
             Destroy(collision.gameObject);
@@ -49,6 +47,6 @@ public class PlayerTrigger : MonoBehaviour
 
     void SetEnemiesKilledCount()
     {
-        enemiesKilled.text = "Diamonds: " + count.ToString();
+        enemiesKilled.text = "Crystals: " + count.ToString();
     }
 }
