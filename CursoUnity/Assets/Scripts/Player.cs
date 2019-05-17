@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     public AudioClip fxJump;
     public AudioClip fxAttack;
 
+    private float move;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,9 +46,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        move = Input.GetAxis("FHorizontal");
+        Debug.Log(move);
 
-        if (Input.GetButtonDown("Jump") && grounded)
+       
+        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        
+        if (Input.GetButtonDown("FJump") && grounded)
         {
             jumping = true;
             SoundManager.instance.playSound(fxJump);
@@ -54,20 +60,19 @@ public class Player : MonoBehaviour
 
         SetAnimations();
 
-        if (Input.GetButton("Fire1") && grounded && Time.time > nextAttack)
+        if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
         {
             SoundManager.instance.playSound(fxAttack);
             Attack();
         }
-
+        
     }
 
     // Function that has the same purpose of function Update, but recommended to work with RigidBodies
     private void FixedUpdate()
     {
-        float move = Input.GetAxis("Horizontal");
-        rigidBody2d.velocity = new Vector2(move*speed, rigidBody2d.velocity.y);
 
+        rigidBody2d.velocity = new Vector2(move * speed, rigidBody2d.velocity.y);
         if ((move < 0f && facingRight) || (move > 0f && !facingRight))
         {
             Flip();
@@ -78,7 +83,7 @@ public class Player : MonoBehaviour
             rigidBody2d.AddForce(new Vector2(0f, jumpForce));
             jumping = false;
         }
-
+        
     }
 
     void Flip()
