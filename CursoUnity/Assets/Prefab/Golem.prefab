@@ -155,6 +155,8 @@ MonoBehaviour:
   health: 3
   speed: 2
   wallCheck: {fileID: 7579365355767833297}
+  enemiesKilled: {fileID: 0}
+  crystal: {fileID: 5935172849678336570, guid: 469b3fe35ece30548bbfaf25d90c76fc, type: 3}
 --- !u!1 &7200139889109784221
 GameObject:
   m_ObjectHideFlags: 0

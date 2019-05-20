@@ -16,6 +16,7 @@ public class Snake : MonoBehaviour
     public Transform wallCheck;
     public Text enemiesKilled;
     private int counter;
+    public GameObject crystal;
 
     // Start is called before the first frame update
     void Start()
@@ -75,8 +76,17 @@ public class Snake : MonoBehaviour
 
         if (health < 1)
         {
+            EnemyDeath();
             Destroy(gameObject);
             counter++;
         }
     }
+
+    void EnemyDeath()
+    {
+        GameObject cloneCrystal = Instantiate(crystal, transform.position, Quaternion.identity);
+        Rigidbody2D rb2dCrown = cloneCrystal.GetComponent<Rigidbody2D>();
+        rb2dCrown.AddForce(Vector3.up * 500);
+    }
+
 }
