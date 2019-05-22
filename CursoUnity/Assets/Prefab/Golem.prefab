@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7028478925430767686}
   - component: {fileID: 4474737596398840858}
   - component: {fileID: 8117791792555835907}
-  - component: {fileID: 2054537924279167120}
+  - component: {fileID: 1229196840033727788}
   m_Layer: 10
   m_Name: Golem
   m_TagString: Enemy
@@ -140,7 +140,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.47845197, y: -0.1697737}
   m_Size: {x: 1.7466464, y: 3.3517735}
   m_Direction: 0
---- !u!114 &2054537924279167120
+--- !u!114 &1229196840033727788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,13 +149,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547637159457462237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e0c22232afb61a40828c93d171957b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f7bfbf1c42f91044089fc188953f27f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 2
+  facingRight: 0
+  health: 5
+  speed: 3
   wallCheck: {fileID: 7579365355767833297}
-  enemiesKilled: {fileID: 0}
   crystal: {fileID: 5935172849678336570, guid: 469b3fe35ece30548bbfaf25d90c76fc, type: 3}
 --- !u!1 &7200139889109784221
 GameObject:

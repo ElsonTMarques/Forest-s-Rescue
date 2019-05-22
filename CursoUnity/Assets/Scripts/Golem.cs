@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Snake : MonoBehaviour
+public class Golem : MonoBehaviour
 {
-    private bool facingRight = true;
+    public bool facingRight = false;
     private Rigidbody2D rigidBody2d;
     private SpriteRenderer sprite;
     private bool touchedWall = false;
@@ -23,6 +23,7 @@ public class Snake : MonoBehaviour
         speed = Mathf.FloorToInt(Random.Range(3f, 6f));
         sprite = GetComponent<SpriteRenderer>();
         rigidBody2d = GetComponent<Rigidbody2D>();
+        Flip();
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class Snake : MonoBehaviour
         if (touchedWall)
         {
             Flip();
-            Debug.Log("Snake Speed: " + speed);
+            Debug.Log("Golem Speed: " + speed);
         }
 
     }

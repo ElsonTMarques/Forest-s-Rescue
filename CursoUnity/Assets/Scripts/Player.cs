@@ -46,13 +46,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("FHorizontal");
-        Debug.Log(move);
-
+        move = Input.GetAxis("Horizontal");
        
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         
-        if (Input.GetButtonDown("FJump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             jumping = true;
             SoundManager.instance.playSound(fxJump);
@@ -60,7 +58,7 @@ public class Player : MonoBehaviour
 
         SetAnimations();
 
-        if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
+        if (Input.GetButton("Fire1") && grounded && Time.time > nextAttack)
         {
             SoundManager.instance.playSound(fxAttack);
             Attack();
@@ -146,7 +144,6 @@ public class Player : MonoBehaviour
 
             if (health < 1)
             {
-                Debug.Log("Morreu!!!!");
                 KingDeath();
                 Invoke("ReloadLevel", 3f);
                 gameObject.SetActive(false);
