@@ -56,6 +56,7 @@ public class Snake : MonoBehaviour
         if (collision.CompareTag("Attack"))
         {
             DamageEnemy();
+            //Destroy(collision);
         }
     }
 
