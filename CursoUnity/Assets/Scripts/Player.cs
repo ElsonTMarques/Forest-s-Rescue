@@ -46,11 +46,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("FHorizontal");
+        //Movimentação do personagem, para usar o controle descomente a linha com os botões "FXxxxx"
+    
+        //controle
+        //move = Input.GetAxis("FHorizontal");
+
+        //teclado
+        move = Input.GetAxis("Horizontal");
        
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         
-        if (Input.GetButtonDown("FJump") && grounded)
+        //controle
+        //if (Input.GetButtonDown("FJump") && grounded)
+
+        //controle
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             jumping = true;
             SoundManager.instance.playSound(fxJump);
@@ -58,9 +68,13 @@ public class Player : MonoBehaviour
 
         SetAnimations();
 
-        if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
+        //controle
+        //if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
+        
+        //teclado
+        if (Input.GetButton("Fire1") && grounded && Time.time > nextAttack)
         {
-            SoundManager.instance.playSound(fxAttack);
+                SoundManager.instance.playSound(fxAttack);
             Attack();
         }
         

@@ -65,7 +65,7 @@ public class Snake : MonoBehaviour
         float actualSpeed = speed;
         speed = speed * -1;
         sprite.color = Color.red;
-        rigidBody2d.AddForce(new Vector2(0f, 200f));
+        rigidBody2d.AddForce(new Vector2(2f, 200f));
         yield return new WaitForSeconds(0.1f);
         speed = actualSpeed;
         sprite.color = Color.white;
