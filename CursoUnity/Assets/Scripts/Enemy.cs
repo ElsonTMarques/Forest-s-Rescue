@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         Flip();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame kkkkkkkk teste.
     void Update()
     {
         touchedWall = Physics2D.Linecast(transform.position, wallCheck.position, 1 << LayerMask.NameToLayer("Ground"));
