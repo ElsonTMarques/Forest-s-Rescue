@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   jumpForce: 700
-  health: 10
+  health: 3
   groundCheck: {fileID: 955020377504414357}
   attackRate: 0.5
   spawnAttack: {fileID: 3485463704589771273}

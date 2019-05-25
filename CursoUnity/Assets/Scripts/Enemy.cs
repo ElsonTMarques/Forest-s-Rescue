@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Golem : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public bool facingRight = false;
     private Rigidbody2D rigidBody2d;
@@ -17,9 +17,17 @@ public class Golem : MonoBehaviour
     private int counter;
     public GameObject crystal;
 
+    public float m_DamagedSpeed = 700.0f;
+
+    private bool m_Damaged;
+
+    private Transform m_PlayerPosition;
+
     // Start is called before the first frame update
     void Start()
     {
+        m_PlayerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            
         speed = Mathf.FloorToInt(Random.Range(3f, 6f));
         sprite = GetComponent<SpriteRenderer>();
         rigidBody2d = GetComponent<Rigidbody2D>();
@@ -34,13 +42,15 @@ public class Golem : MonoBehaviour
         if (touchedWall)
         {
             Flip();
-            Debug.Log("Golem Speed: " + speed);
         }
 
     }
 
     private void FixedUpdate()
     {
+        if (m_Damaged)
+            return;
+
         rigidBody2d.velocity = new Vector2(speed, rigidBody2d.velocity.y);
     }
 
@@ -62,13 +72,18 @@ public class Golem : MonoBehaviour
 
     IEnumerator DamageEffect()
     {
-        float actualSpeed = speed;
-        speed = speed * -1;
         sprite.color = Color.red;
-        rigidBody2d.AddForce(new Vector2(0f, 200f));
+        m_Damaged = true;
+
+        rigidBody2d.velocity = Vector2.zero;
+
+        Vector3 direction = transform.position - m_PlayerPosition.position;
+        rigidBody2d.AddForce(new Vector2(direction.normalized.x * m_DamagedSpeed, 200f));
         yield return new WaitForSeconds(0.1f);
-        speed = actualSpeed;
+
+
         sprite.color = Color.white;
+        m_Damaged = false;
     }
 
     void DamageEnemy()

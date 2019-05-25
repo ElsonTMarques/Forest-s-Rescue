@@ -33,7 +33,6 @@ public class Snake : MonoBehaviour
         if (touchedWall)
         {
             Flip();
-            Debug.Log("Snake Speed: " + speed);
         }
 
     }
