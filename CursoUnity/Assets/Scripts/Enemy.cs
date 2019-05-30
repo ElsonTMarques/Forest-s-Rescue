@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rigidBody2d;
     private SpriteRenderer sprite;
     private bool touchedWall = false;
+    private PlayerTrigger playerTrigger;
+    private int pointsTrigger;
 
     public int health;
     private float speed;
@@ -27,7 +29,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         m_PlayerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            
+        playerTrigger = GameObject.Find("PlayerTrigger").GetComponent<PlayerTrigger>();
         speed = Mathf.FloorToInt(Random.Range(3f, 6f));
         sprite = GetComponent<SpriteRenderer>();
         rigidBody2d = GetComponent<Rigidbody2D>();
@@ -95,6 +97,8 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeath();
             Destroy(gameObject);
+            playerTrigger.countPontos += 5;
+            playerTrigger.SetPontosCount();
             counter++;
         }
     }

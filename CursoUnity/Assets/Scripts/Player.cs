@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         //move = Input.GetAxis("FHorizontal");
 
         //teclado
-        move = Input.GetAxis("Horizontal");
+        move = Input.GetAxis("FHorizontal");
        
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         //if (Input.GetButtonDown("FJump") && grounded)
 
         //controle
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("FJump") && grounded)
         {
             jumping = true;
             SoundManager.instance.playSound(fxJump);
@@ -72,9 +72,9 @@ public class Player : MonoBehaviour
         //if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
         
         //teclado
-        if (Input.GetButton("Fire1") && grounded && Time.time > nextAttack)
+        if (Input.GetButton("FAttack") && grounded && Time.time > nextAttack)
         {
-                SoundManager.instance.playSound(fxAttack);
+            SoundManager.instance.playSound(fxAttack);
             Attack();
         }
         
@@ -153,8 +153,6 @@ public class Player : MonoBehaviour
 
             SoundManager.instance.playSound(fxHurt);
             Hud.instance.RefreshLife(health);
-
-            //=================== para inimigo dropar item, utilizar a mesma regra da coroa
 
             if (health < 1)
             {

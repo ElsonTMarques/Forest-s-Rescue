@@ -257,6 +257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesKilled: {fileID: 0}
+  pontosCollecteds: {fileID: 0}
+  userMessage: {fileID: 0}
+  countPontos: 0
   fxCoin: {fileID: 8300000, guid: edd4d67a7d649fe4893a21a0e174a806, type: 3}
 --- !u!1 &7675585278133396310
 GameObject:

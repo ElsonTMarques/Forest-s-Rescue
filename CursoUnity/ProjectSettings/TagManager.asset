@@ -9,6 +9,9 @@ TagManager:
   - Coin
   - Water
   - Crystal
+  - Box
+  - CrystalVerifyTag
+  - GenericSign
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Trigger
   - Level
   - Crystal
-  - 
+  - CrystalVerify
   - 
   - 
   - 
