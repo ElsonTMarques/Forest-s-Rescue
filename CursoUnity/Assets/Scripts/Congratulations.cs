@@ -10,7 +10,7 @@ public class Congratulations : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            Invoke("GoToMenu", 3f);
+            Invoke("GoToMenu", 8f);
         }
     }
 

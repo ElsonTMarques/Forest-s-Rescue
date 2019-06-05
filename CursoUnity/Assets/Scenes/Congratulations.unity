@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.63, y: -61.5}
-  m_SizeDelta: {x: 450.9, y: 151.6}
+  m_AnchoredPosition: {x: -3.13, y: -62.85}
+  m_SizeDelta: {x: 451.9, y: 154.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460460273
 MonoBehaviour:
@@ -173,8 +173,8 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d0b1b221bfabf6b4c8d0d05822463028, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
+    m_BestFit: 1
+    m_MinSize: 20
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -182,9 +182,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Este jogo foi criado pelos alunos da unisal GECO7AN\nEliara Costa - Documenta\xE7\xE3o.\nElson
-    Tavares - Desenvolvimento.\nMatheus Camilo - Documenta\xE7\xE3o.\nMatheus Oliveira
-    - Hardware.\nMoises Coelho - Desenvolvimento."
+  m_Text: 'Este jogo foi criado pelos alunos da unisal GECO7AN
+
+    Eliara Costa
+
+    Elson Tavares
+
+    Leandro Pinheiro
+
+    Matheus Camilo
+
+    Matheus Oliveira
+
+    Moises Coelho'
 --- !u!222 &460460274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -204,6 +214,7 @@ GameObject:
   - component: {fileID: 465666300}
   - component: {fileID: 465666299}
   - component: {fileID: 465666298}
+  - component: {fileID: 465666301}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -259,6 +270,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465666301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465666297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2362d694d415b342a8a9d2059c53723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventSystem: {fileID: 0}
+  m_SelectedObject: {fileID: 0}
 --- !u!1 &468857186
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: 46.6, y: 57.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468857188
 MonoBehaviour:
@@ -394,8 +419,8 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d0b1b221bfabf6b4c8d0d05822463028, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
+    m_BestFit: 1
+    m_MinSize: 20
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -473,9 +498,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d0b1b221bfabf6b4c8d0d05822463028, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 30
+    m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
